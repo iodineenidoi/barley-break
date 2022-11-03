@@ -83,3 +83,8 @@ void setInt(unsigned int program, const char* name, int value)
 {
 	glUniform1i(glGetUniformLocation(program, name), value);
 }
+
+void setVec2(unsigned program, const char* name, float first, float second)
+{
+	glUniform2f(glGetUniformLocation(program, name), first, second);
+}

@@ -73,14 +73,14 @@ public:
 		glBindTexture(GL_TEXTURE_2D, texture);
 
 		glUseProgram(shaderProgram);
-		glUniform2f(glGetUniformLocation(shaderProgram, "u_rect.resolution"), WINDOW_SIZE, WINDOW_SIZE);
-		glUniform2f(glGetUniformLocation(shaderProgram, "u_rect.size"), 128.0f, 128.0f);
-		glUniform2f(glGetUniformLocation(shaderProgram, "u_rect.pos"), xPos, yPos);
+		setVec2(shaderProgram, "u_rect.resolution", WINDOW_SIZE, WINDOW_SIZE);
+		setVec2(shaderProgram, "u_rect.size", 128.0f, 128.0f);
+		setVec2(shaderProgram, "u_rect.pos", xPos, yPos);
 
-		glUniform1i(glGetUniformLocation(shaderProgram, "u_imageSplitter.texRowIndex"), texInRowIndex);
-		glUniform1i(glGetUniformLocation(shaderProgram, "u_imageSplitter.texColumnIndex"), texInColumnIndex);
-		glUniform1i(glGetUniformLocation(shaderProgram, "u_imageSplitter.texturesInRow"), texturesInRow);
-		glUniform1i(glGetUniformLocation(shaderProgram, "u_imageSplitter.texturesInColumn"), texturesInColumn);
+		setInt(shaderProgram, "u_imageSplitter.texRowIndex", texInRowIndex);
+		setInt(shaderProgram, "u_imageSplitter.texColumnIndex", texInColumnIndex);
+		setInt(shaderProgram, "u_imageSplitter.texturesInRow", texturesInRow);
+		setInt(shaderProgram, "u_imageSplitter.texturesInColumn", texturesInColumn);
 	}
 };
 
